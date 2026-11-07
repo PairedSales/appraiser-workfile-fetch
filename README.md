@@ -43,54 +43,27 @@ You still verify every record. See `DISCLAIMER.md`.
 
 ## Install
 
-You need Windows, Google Chrome, an MRED connectMLS membership, and one of the AI apps below. About 20 minutes.
+You need Windows, Chrome, a connectMLS membership and an AI app.
 
-1. **Download.** On this page, click **Code**, then **Download ZIP**. Extract it into your Documents folder. You get `Documents\appraiser-workfile-fetch-main`.
-2. **Set up your AI app.** Follow the page for your app. It covers the Chrome add-on, Python and the project:
-   * Claude desktop app: `setup\claude-desktop.md`
-   * ChatGPT desktop app or Codex: `setup\chatgpt.md`
-   * Gemini (experimental): `setup\gemini-experimental.md`
-3. **Turn on the Chrome setup.** In `setup\chrome\`, double-click `chrome-automation-on.reg` and approve the prompt. Read `setup\chrome\README.md` first: it changes how Chrome prints.
-4. **Sign in to connectMLS** in that same Chrome.
-5. **Run it.** In your AI project, type:
+1. Click **Code**, then **Download ZIP**, and extract it anywhere.
+2. Set up your AI app: `setup\claude-desktop.md`, `setup\chatgpt.md` (ChatGPT or Codex), or `setup\gemini-experimental.md`.
+3. Double-click `setup\chrome\chrome-automation-on.reg` and approve the prompt. It makes Chrome save prints as PDFs (`setup\chrome\README.md`).
+4. Sign in to connectMLS in Chrome.
 
-   ```
-   run the fetch for 400 S Eagle St, Naperville, IL 60540
-   ```
+Then ask:
 
-   Any wording works, such as "get the data for 400 S Eagle St". The first time, the AI checks your PC and installs what is missing. Your AI app or its Chrome add-on asks before it opens each new site. Allow them (`setup\allowed-sites.md` lists every one).
+> Get the data for 123 Main St, Anytown, IL.
 
-## Test addresses
+The first time, allow what it asks for.
 
-Public buildings, one per county, so you can try it without using a client's property. They are tax exempt and rarely listed, so expect some tax, township and MLS items to come back "not applicable". That is normal.
+## Using it
 
-| County | Address |
-|---|---|
-| Cook | Oak Park Village Hall, 123 Madison St, Oak Park, IL 60302 |
-| DuPage | Naperville Municipal Center, 400 S Eagle St, Naperville, IL 60540 |
-| Kane | Geneva City Hall, 22 S First St, Geneva, IL 60134 |
-| Lake | Libertyville Village Hall, 118 W Cook Ave, Libertyville, IL 60048 |
-| McHenry | Woodstock City Hall, 121 W Calhoun St, Woodstock, IL 60098 |
-| Will | Joliet City Hall, 150 W Jefferson St, Joliet, IL 60432 |
-| Kendall | Yorkville City Hall, 651 Prairie Pointe Dr, Yorkville, IL 60560 |
-| DeKalb | DeKalb Municipal Building, 164 E Lincoln Hwy, DeKalb, IL 60115 |
+> What is still missing for 123 Main St?
 
-## When something is missing
+> Every night I want you to fetch the data for 123 Main St.
 
-Open `Workfiles\<address>\ErrorLog.txt`. Each missing item says why and what you need to do first, if anything. Do that (usually: sign in to the site in Chrome), then say "run the fetch for <address>" again. It only fetches what is still missing.
-
-## Updates
-
-Download the newer ZIP and extract it over the same folder, replacing files. Your own files are safe: they live only in `Workfiles\`, `_data\` and `local.json`, which the ZIP does not contain.
-
-## Want it to run on its own?
-
-Just ask: "every night I want you to fetch the data for 123 Fake St." The AI sets it up. `guides\automating-it.md` has a few more examples.
-
-## Contributing
-
-County sites change. If a step breaks, please open an issue or a pull request (`CONTRIBUTING.md`). Never post a real subject address, PIN or MLS number: use the test addresses above.
+Asking for an address again fetches only what is still missing. `guides\automating-it.md` has more examples.
 
 ## License
 
-MIT (`LICENSE`). Not affiliated with MRED, FEMA, any county or any township.
+Public domain ([The Unlicense](LICENSE)). Use it, change it, sell it, no credit needed. Not affiliated with MRED, FEMA, any county or any township.

@@ -6,6 +6,6 @@
 
 **Follow each site's terms.** You use your own connectMLS and Infosparks membership, under MRED's rules. You use each county and township site under its own terms. If a site's terms do not allow this kind of use, do not use the fetch on it.
 
-**Confidentiality.** Your workfiles stay on your PC. Keep them private as USPAP requires, and never post real subject data when asking for help (`CONTRIBUTING.md`).
+**Confidentiality.** Your workfiles stay on your PC. Keep them private as USPAP requires, and never post real subject data (address, PIN, MLS number, owner, client) anywhere public.
 
-**No warranty.** Provided as is, under the MIT license (`LICENSE`).
+**No warranty.** Provided as is, with no warranty of any kind (`LICENSE`).

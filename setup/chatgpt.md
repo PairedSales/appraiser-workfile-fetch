@@ -6,7 +6,7 @@
 4. **Sign in to connectMLS** in Chrome, then type:
 
    ```
-   run the fetch for 400 S Eagle St, Naperville, IL 60540
+   get the data for 123 Main St, Anytown, IL
    ```
 
 ChatGPT may ask before it opens a site, takes a screenshot or runs a script. Allow them for this project (`allowed-sites.md` lists every site). If it says CDP access is off, turn it on (step 2) and run it again.

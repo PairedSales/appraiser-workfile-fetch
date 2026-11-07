@@ -80,4 +80,4 @@ Every site below is free and public except connectMLS and Infosparks, which use 
 
 Outside Chicago, the zoning map often comes from the village or city's own site (`playbook\recipes\municipal-zoning.md`). The first time a new town comes up, your AI app asks to open its site. Check that it is the town's own site, then allow it.
 
-If a township site moves or a new one turns up, the fetch adds it to `playbook\townships.json`. Please send that change back as a pull request (`CONTRIBUTING.md`).
+If a township site moves or a new one turns up, the fetch adds it to `playbook\townships.json`.

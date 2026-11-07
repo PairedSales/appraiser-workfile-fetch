@@ -16,7 +16,7 @@ Also:
 Then say:
 
 ```
-run the fetch for 400 S Eagle St, Naperville, IL 60540
+get the data for 123 Main St, Anytown, IL
 ```
 
 The browser actions in the playbook are written for any tool, but there is no Gemini adapter yet in `playbook\browser\`. Gemini should read `claude-in-chrome.md` and `chatgpt.md` and map the same actions to its own tools. If you get it working, please send the adapter back as a pull request.

@@ -31,5 +31,3 @@ Read this if you are ChatGPT or Codex. You drive the user's own Chrome, where th
 * **Bigger than the window.** `Page.captureScreenshot` with `captureBeyondViewport: true` can capture a region larger than the window, which can replace a tiled capture. Check the result: some map viewers only draw what is on screen, so the part beyond the window comes out blank. Then tile as in `recipes/tiled-capture.md`.
 * **Hidden window.** When the Chrome window is behind others, maps may not draw (`recipes/browser.md`, rAF patch). `Page.bringToFront` before the capture also helps.
 * **Approvals.** ChatGPT may ask the user to approve actions. Ask once at the start for the whole run, so a run is not stopped at every capture.
-
-Found another difference? Add it here and send it back as a pull request (`CONTRIBUTING.md`).
