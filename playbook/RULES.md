@@ -14,7 +14,7 @@ Everything is relative to the folder root, the folder that holds `START-HERE.md`
 
 ## The loop
 
-The user says "run the fetch for <address>". That address is the whole intake.
+The user asks for an address's data, in any words ("run the fetch for <address>", "get the data for <address>"). That address is the whole intake. For a run on a schedule or for a list, see `START-HERE.md`, Runs nobody is watching.
 
 0. First run on this PC, or after any TOOL_MISSING: `python fetch/fetch.py doctor`. Fix every failed check it lists (usually `python -m pip install -r requirements.txt`), then run it again. If `python` is not found, try `py`.
 1. `python fetch/fetch.py plan --address "<address as the user gave it>"` (add `--test` for test runs). It prints JSON: `read_these_first`, `tools`, `scratch`, `signin_checks`, and `address` with its `slug`, `folder` and a `todo` map of procedure to item keys.
@@ -98,7 +98,7 @@ A capture is a file on disk: the capture result gives its path. To put a finishe
 
 Reason codes: LOGIN_WALL, DOMAIN_REFUSED, NOT_FOUND, UNCERTAIN_MATCH, SERVICE_DOWN, PRINT_FAILED, DOWNLOAD_NOT_REACHABLE, ON_SITE_ONLY, TOOL_MISSING, BROWSER_UNAVAILABLE, OTHER. TOOL_MISSING means a program on this PC is missing (fetch.py prints which): run `fetch.py doctor`.
 
-In an `--unattended` run, a failed item is skipped once it has failed on 3 different days; it stays in ErrorLog.txt for a retry by hand. LOGIN_WALL never counts toward that: signing in is the fix, so the item comes back every run. A run the user starts by saying "run the fetch for <address>" always tries every missing item. Partial files are never deleted: whatever is in the folder counts, and only what is missing is fetched again.
+In an `--unattended` run, a failed item is skipped once it has failed on 3 different days; it stays in ErrorLog.txt for a retry by hand. LOGIN_WALL never counts toward that: signing in is the fix, so the item comes back every run. A run the user starts by asking for an address always tries every missing item. Partial files are never deleted: whatever is in the folder counts, and only what is missing is fetched again.
 
 ## Finish and report
 

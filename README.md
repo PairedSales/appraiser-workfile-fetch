@@ -58,7 +58,7 @@ You need Windows, Google Chrome, an MRED connectMLS membership, and one of the A
    run the fetch for 400 S Eagle St, Naperville, IL 60540
    ```
 
-   The first time, the AI checks your PC (`fetch.py doctor`) and installs what is missing. Your AI app or its Chrome add-on asks before it opens each new site. Allow them (`setup\allowed-sites.md` lists every one).
+   Any wording works, such as "get the data for 400 S Eagle St". The first time, the AI checks your PC and installs what is missing. Your AI app or its Chrome add-on asks before it opens each new site. Allow them (`setup\allowed-sites.md` lists every one).
 
 ## Test addresses
 
@@ -85,7 +85,7 @@ Download the newer ZIP and extract it over the same folder, replacing files. You
 
 ## Want it to run on its own?
 
-`guides\automating-it.md` explains how to feed it a list of addresses, run it overnight, or add your own order documents. That part is up to you; this project only does one address at a time.
+Just ask: "every night I want you to fetch the data for 123 Fake St." The AI sets it up. `guides\automating-it.md` has a few more examples.
 
 ## Contributing
 
