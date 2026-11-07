@@ -1,0 +1,24 @@
+# User data: lives only in the user's own copy, never in the repo
+Workfiles/
+_data/
+local.json
+ErrorLog.txt
+
+# Captures and documents
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.xlsx
+*.xlsm
+*.docx
+*.zip
+
+# Local only
+_local-notes/
+scripts/scrub-terms.local
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+Thumbs.db

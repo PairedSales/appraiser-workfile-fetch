@@ -1,0 +1,611 @@
+{
+ "_about": "Township assessor registry for the township procedure (deliverables/township-card.md). Per county: prefixes maps the PIN's first two digits to the township (a list when one code covers two townships: read the township from the county record instead); townships maps each township to its site. status online = free online property data at url; none = checked, nothing online. tested = a run has captured from it. Townships not listed are unknown: the run searches for a site and saves what it finds with fetch.py township set. Built 2026-10-25 from web research plus browser tests of Algonquin and Downers Grove.",
+ "recheck_none_after_days": 180,
+ "DUPAGE": {
+  "prefixes": {
+   "01": "Wayne",
+   "02": "Bloomingdale",
+   "03": "Addison",
+   "04": "Winfield",
+   "05": "Milton",
+   "06": "York",
+   "07": "Naperville",
+   "08": "Lisle",
+   "09": "Downers Grove",
+   "10": "Downers Grove"
+  },
+  "townships": {
+   "Downers Grove": {
+    "status": "online",
+    "url": "https://search.dgtownship.com/ParcelSearch/SD/DG/AssessorDB/Search.aspx",
+    "platform": "ParcelSearch/SD (see deliverables/township-card.md, platform SD)",
+    "how": "PIN 10 digits no dashes in txtParcelNumber; one hit opens PropertyDetail.aspx directly; record card PDF via cmdViewPRC",
+    "tested": true,
+    "checked": "2026-10-25",
+    "source": "browser test 2026-10-25"
+   },
+   "Lisle": {
+    "status": "online",
+    "url": "https://lisletownshipassessor.com/ParcelSearch/SD/Lisle/AssessorDB/Search.aspx",
+    "platform": "ParcelSearch/SD (see deliverables/township-card.md, platform SD)",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25",
+    "note": "2026-10-25: Cloudflare 'verify you are human' check in front of the search; if it shows, record failed OTHER (CAPTCHA), never click it"
+   },
+   "Milton": {
+    "status": "online",
+    "url": "https://miltonassessor.com/parcelsearch/sd/milton/assessordb/search.aspx",
+    "platform": "ParcelSearch/SD (see deliverables/township-card.md, platform SD)",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Naperville": {
+    "status": "online",
+    "url": "https://napervilletownship.com/ParcelSearch/SD/Naperville/AssessorDB/Search.aspx",
+    "platform": "ParcelSearch/SD (see deliverables/township-card.md, platform SD)",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25",
+    "note": "record card with improvement sketch per township site"
+   },
+   "Winfield": {
+    "status": "online",
+    "url": "https://search.winfieldtownship.com/ParcelSearch/SD/Winfield/AssessorDB/Search.aspx",
+    "platform": "ParcelSearch/SD (see deliverables/township-card.md, platform SD)",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25",
+    "note": "research saw SearchStop.aspx; try Search.aspx"
+   },
+   "York": {
+    "status": "online",
+    "url": "https://search.yorkassessor.com/ParcelSearchNew/SD/York/AssessorDB/Search.aspx",
+    "platform": "ParcelSearch/SD (see deliverables/township-card.md, platform SD)",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25",
+    "note": "ParcelSearchNew variant; record has sketch with dimensions"
+   },
+   "Addison": {
+    "status": "online",
+    "url": "https://search.addisontownship.com/webdb/sd/addison/assessordb/search.aspx",
+    "platform": "ParcelSearch/SD (see deliverables/township-card.md, platform SD)",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25",
+    "note": "/webdb/ path variant"
+   },
+   "Bloomingdale": {
+    "status": "online",
+    "url": "https://propertysearch.mybtao.com/",
+    "platform": "own front end over the SD data (untested)",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25",
+    "note": "gate https://mybtao.com/property-search/; PIN with or without dashes"
+   },
+   "Wayne": {
+    "status": "online",
+    "url": "https://www.waynetownshipassessor.com/online-search.aspx",
+    "platform": "NJS Enterprises PAMS (see platform NJS) older Classic ASP",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25",
+    "note": "photos/sketches at /Members/m_pictures.asp with Type=P (photos) or F (floorplans) and PIN=dashed PIN; search form not yet seen"
+   }
+  }
+ },
+ "KANE": {
+  "prefixes": {
+   "01": "Hampshire",
+   "02": "Rutland",
+   "03": "Dundee",
+   "04": "Burlington",
+   "05": "Plato",
+   "06": "Elgin",
+   "07": "Virgil",
+   "08": "Campton",
+   "09": "St. Charles",
+   "10": "Kaneville",
+   "11": "Blackberry",
+   "12": [
+    "Geneva",
+    "Batavia"
+   ],
+   "13": "Big Rock",
+   "14": "Sugar Grove",
+   "15": "Aurora"
+  },
+  "_note": "The Kane parcel layer's Township field (counties/kane.md) is the best source; 12 covers both Geneva and Batavia.",
+  "townships": {
+   "Aurora": {
+    "status": "online",
+    "url": "https://search.auroratownshipassessor.com/pin",
+    "platform": "search.<domain>/pin family (likely Visual PAMSPro)",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Blackberry": {
+    "status": "online",
+    "url": "https://search.blackberrytwpil.gov/pin",
+    "platform": "search.<domain>/pin family (likely Visual PAMSPro)",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25",
+    "note": "record card with exterior photo"
+   },
+   "Batavia": {
+    "status": "online",
+    "url": "http://search.bataviatownship.com/",
+    "platform": "Visual PAMSPro (Cirone), ASP.NET postbacks",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25",
+    "note": "shows physical data, photo and sketch"
+   },
+   "Dundee": {
+    "status": "online",
+    "url": "https://search.dundeetownship.com/",
+    "platform": "JavaScript single-page app",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Elgin": {
+    "status": "online",
+    "url": "https://search.elgintownship.com",
+    "platform": "JavaScript single-page app (same shell as Dundee)",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "St. Charles": {
+    "status": "online",
+    "url": "https://www.stctownshipassessor.org/",
+    "platform": "Gierke Consulting classic ASP (CAMAvision sketch)",
+    "how": "Open stcinit.asp form: field pnum = 13-digit PIN (10-digit PIN + 000, no dashes, e.g. 0900000000000), click Search (POST stcparcels.asp), click the PIN link -> stcdetail.asp?parcel=<13 digits>&sales=0. Disclaimer is plain text, no gate. Record is one wide page (about 1296 x 1870): 2 x 3 tiles of 900 via a fixed 900 box with the content shifted. Sketch /sketches/<dashed PIN>.000.jpg, e.g. /sketches/09-00-000-000.000.jpg (640x373), photo /photos/<id>.jpg (305x228); no record card file.",
+    "tested": true,
+    "checked": "2026-10-26",
+    "source": "nightly run"
+   },
+   "Plato": {
+    "status": "online",
+    "url": "http://platotownshipassessor.com/SearchOptions",
+    "platform": "unknown, disclaimer gate at platotwp.gov/property-search",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Kaneville": {
+    "status": "online",
+    "url": "http://www.kanevilletownship.com/Online_Database/Property_Search_disclaimer.htm",
+    "platform": "static Online_Database site",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Campton": {
+    "status": "online",
+    "url": "https://www.camptontownship.com/Main/Assessor/Online_Database/Online_Database_Disclaimer.htm",
+    "platform": "static Online_Database site",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   }
+  }
+ },
+ "DEKALB": {
+  "prefixes": {
+   "01": "Franklin",
+   "02": "Kingston",
+   "03": "Genoa",
+   "04": "South Grove",
+   "05": "Mayfield",
+   "06": "Sycamore",
+   "07": "Malta",
+   "08": "DeKalb",
+   "09": "Cortland",
+   "10": "Milan",
+   "11": "Afton",
+   "12": "Pierce",
+   "13": "Shabbona",
+   "14": "Clinton",
+   "15": "Squaw Grove",
+   "16": "Paw Paw",
+   "17": "Victor",
+   "18": "Somonauk",
+   "19": "Sandwich"
+  },
+  "townships": {
+   "DeKalb": {
+    "status": "online",
+    "url": "https://dekalbtownshipassessor.com/",
+    "platform": "Visual PAMSPro (Cirone), ASP.NET postback (Property Search link)",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Sycamore": {
+    "status": "none",
+    "note": "assessor page says the only parcel data online is the county's (no sq ft or age online)",
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Clinton": {
+    "status": "none",
+    "note": "township site has no assessor page",
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   }
+  }
+ },
+ "KENDALL": {
+  "prefixes": {},
+  "_note": "Kendall PIN prefixes are survey townships, not political ones (Fox and Kendall contain 01- and 02- parcels): read the township from the county record.",
+  "townships": {
+   "Bristol": {
+    "status": "online",
+    "url": "https://www.bristoltownshipassessor.com/Assessor/PropertySearch?search=pin",
+    "platform": "NJS Enterprises PAMS (see platform NJS)",
+    "how": "record directly at /Assessor/Parcel/<10-digit PIN no dashes>; photo on pics.njs-ent.com; sketch is a PDF linked on the record",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Oswego": {
+    "status": "online",
+    "url": "https://search.oswegotownship.com/assessor/Search?search=pin",
+    "platform": "NJS Enterprises PAMS (see platform NJS)",
+    "how": "record directly at /assessor/Parcel/<10-digit PIN no dashes>; sketch tab is JavaScript; never use 'Printer friendly' (window.print)",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Kendall": {
+    "status": "none",
+    "note": "assessor page links only county GIS/devnetwedge",
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Fox": {
+    "status": "none",
+    "note": "shares the Kendall Township assessor; links only county tools",
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Seward": {
+    "status": "none",
+    "note": "assessor page has no search",
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Little Rock": {
+    "status": "none",
+    "note": "assessor page has no search",
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   }
+  }
+ },
+ "MCHENRY": {
+  "prefixes": {
+   "01": "Chemung",
+   "02": "Alden",
+   "03": "Hebron",
+   "04": "Richmond",
+   "05": "Burton",
+   "06": "Dunham",
+   "07": "Hartland",
+   "08": "Greenwood",
+   "09": "McHenry",
+   "10": "McHenry",
+   "11": "Marengo",
+   "12": "Seneca",
+   "13": "Dorr",
+   "14": "Nunda",
+   "15": "Nunda",
+   "16": "Riley",
+   "17": "Coral",
+   "18": "Grafton",
+   "19": "Algonquin",
+   "20": "Algonquin"
+  },
+  "townships": {
+   "Algonquin": {
+    "status": "online",
+    "url": "https://property.atasr.org/",
+    "platform": "DotNetNuke Homes module (see platform DNN)",
+    "how": "record directly at /Property-Search/ctl/PropertyDetails/mid/388 with PIN=<dashed PIN>-1; sketch and photo _sm to _lg",
+    "tested": true,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Grafton": {
+    "status": "online",
+    "url": "https://graftontownship.us/dnn/Assessor/PropertySearch.aspx",
+    "platform": "DotNetNuke Homes module (see platform DNN)",
+    "how": "search control dnn$ctr529$Homes$btnSubmit",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Dorr": {
+    "status": "online",
+    "url": "https://search.dorrtownship.com/?search=pin",
+    "platform": "Visual PAMSPro (search.<domain>)",
+    "how": "PIN search: fill Pin1..Pin4 (e.g. 13 / 00 / 000 / 000), click Search; record opens directly at /Assessor/Parcel/<hyphenated PIN>. One HTML page (#content): property info, assessment, legal/lot, sales, Building #1. No sketch, photo or record card file. Card PNG made in-page with html2canvas (cdnjs allowed) cropped to the Building #1 table, downloaded via anchor and grab-download --name.",
+    "tested": true,
+    "checked": "2026-10-26",
+    "source": "nightly run"
+   },
+   "Nunda": {
+    "status": "online",
+    "url": "https://search.nundatownship.com/?search=pin",
+    "platform": "search.<domain>/?search=pin family (same as Dorr)",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "McHenry": {
+    "status": "online",
+    "url": "https://search.mchenrytownship.com/search",
+    "platform": "JavaScript single-page app",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Greenwood": {
+    "status": "online",
+    "url": "https://search.greenwoodtownshipil.gov/search",
+    "platform": "JavaScript single-page app",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25",
+    "note": "legacy Drupal pages at greenwoodtownshipil.gov/property-assessment are 2022 data: do not use"
+   },
+   "Coral": {
+    "status": "online",
+    "url": "https://www.coraltownship.com/assessment-viewer.php",
+    "platform": "WordPress assessment-viewer.php",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Riley": {
+    "status": "online",
+    "url": "https://rileytwp.com/assessment-viewer.php",
+    "platform": "WordPress assessment-viewer.php",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Seneca": {
+    "status": "online",
+    "url": "https://senecatownship.com/assessment-viewer.php",
+    "platform": "WordPress assessment-viewer.php",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Burton": {
+    "status": "online",
+    "url": "https://burtontwp.com/assessor/property-search/",
+    "platform": "Caspio app behind an I AGREE page (link, do not tick terms boxes)",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Chemung": {
+    "status": "online",
+    "url": "https://chemungtownshipil.gov/propertyrecordcards",
+    "platform": "PDF record cards in a Google Drive search",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25",
+    "note": "type the dashed PIN in the Drive search; save the record card PDF as township-prc"
+   },
+   "Hebron": {
+    "status": "none",
+    "note": "township page says the only parcel data online is the county's",
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Marengo": {
+    "status": "none",
+    "note": "Property Records Search page has contact info only",
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   }
+  }
+ },
+ "WILL": {
+  "prefixes": {
+   "01": "Custer",
+   "02": "Reed",
+   "03": "Wilmington",
+   "04": "Channahon",
+   "05": "Troy",
+   "06": "Plainfield",
+   "07": "Wheatland",
+   "08": "Wesley",
+   "09": "Florence",
+   "10": "Jackson",
+   "11": "Lockport",
+   "12": "DuPage",
+   "13": "Wilton",
+   "14": "Manhattan",
+   "15": "New Lenox",
+   "16": "Homer",
+   "17": "Peotone",
+   "18": "Green Garden",
+   "19": "Frankfort",
+   "20": "Will",
+   "21": "Monee",
+   "22": "Washington",
+   "23": "Crete",
+   "30": "Joliet"
+  },
+  "_note": "Will PINs are 16 digits; the first pair is the township. The willcountysoa.com card also names the township.",
+  "townships": {
+   "Manhattan": {
+    "status": "online",
+    "url": "https://manhattantownship.com/Record-Search",
+    "platform": "Titan CMS record pages",
+    "how": "residential record directly at /Residential-Property/<dashed PIN without the leading 14->.htm, e.g. 12-00-000-000-0000; full two-sided record card with photo and sketch",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Monee": {
+    "status": "online",
+    "url": "https://moneeassessor.com/Assessment",
+    "platform": "Titan CMS (like Manhattan)",
+    "how": "PIN without the leading 21 and without dashes (e.g. 14000000000000) in the search box, then the result link opens /Property/<dashed 14-digit PIN>.htm (e.g. 14-00-000-000-0000.htm): a record page with photo (/Files/PropertyPhotos/<14 digits>.jpg, 1075x806) and sketch (/Files/PropertySketches/<14 digits>.gif, 481x337), no PDF card",
+    "tested": true,
+    "checked": "2026-10-29",
+    "source": "nightly run"
+   },
+   "Troy": {
+    "status": "online",
+    "url": "https://troytownship.com/property-search/",
+    "platform": "WordPress record pages",
+    "how": "record directly at https://www.troytownship.com/property/<14 digits: PIN without the leading 05, no dashes>/ ; Photo and Sketch tabs",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Frankfort": {
+    "status": "online",
+    "url": "https://search.frankfortassessor.com/ParcelSearch/SD/FT/AssessorDB/Search.aspx",
+    "platform": "ParcelSearch/SD (see deliverables/township-card.md, platform SD)",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Jackson": {
+    "status": "online",
+    "url": "https://search.jacksontownshipil.com/ParcelSearch/SD/Jackson/AssessorDB/Search.aspx",
+    "platform": "ParcelSearch/SD (see deliverables/township-card.md, platform SD)",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Joliet": {
+    "status": "online",
+    "url": "http://1968-30268.el-alt.com/ParcelSearch/SD/Joliet/AssessorDB/Search.aspx",
+    "platform": "ParcelSearch/SD (see deliverables/township-card.md, platform SD)",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25",
+    "note": "linked from jolietassessor.net/property-search/; PIN needs the trailing 0000"
+   },
+   "Wheatland": {
+    "status": "online",
+    "url": "https://wheatlandassessor.com/property-search-disclaimer/",
+    "platform": "probably ParcelSearch/SD (see deliverables/township-card.md, platform SD)",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "DuPage": {
+    "status": "online",
+    "url": "https://www.dupagetownshipassessor.com/parcel_search.aspx",
+    "platform": "NJS Enterprises ASP.NET",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25",
+    "note": "disclaimer at parcel_disclaimer.aspx; postback ctl00$BC$lbPinSearch"
+   },
+   "Plainfield": {
+    "status": "online",
+    "url": "http://app.plainfieldassessor.com/",
+    "platform": "Visual PAMSPro (Cirone), ASP.NET postbacks",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Lockport": {
+    "status": "online",
+    "url": "http://www.lockporttownshipassessor.com/propertysearch/default.html",
+    "platform": "unknown",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Homer": {
+    "status": "online",
+    "url": "http://www.homerassessor.org/property-search/",
+    "platform": "unknown",
+    "how": "",
+    "tested": false,
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Crete": {
+    "status": "none",
+    "note": "assessor pages refer to willcountysoa.com",
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Green Garden": {
+    "status": "none",
+    "note": "page refers to willcountysoa.com",
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "New Lenox": {
+    "status": "none",
+    "note": "appraisers request info by fax or email",
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Peotone": {
+    "status": "none",
+    "note": "page refers to willcountysoa.com",
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   },
+   "Washington": {
+    "status": "none",
+    "note": "record cards by contacting the office",
+    "checked": "2026-10-25",
+    "source": "research 2026-10-25"
+   }
+  }
+ }
+}

@@ -1,0 +1,37 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Playbook files all present
+        run: python fetch/fetch.py check
+
+      - name: Bookkeeping smoke test
+        run: python scripts/smoke_test.py
+
+      - name: Scrub check (no personal data, no captured files)
+        env:
+          SCRUB_TERMS: ${{ secrets.SCRUB_TERMS }}
+        run: python scripts/scrub_check.py
+
+      - name: Secret scan (whole history)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
