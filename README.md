@@ -60,7 +60,7 @@ The first time, allow what it asks for.
 
 > What is still missing for 123 Main St?
 
-> Every night I want you to fetch the data for 123 Main St.
+> Every night, fetch the data for my new orders from my email.
 
 Asking for an address again fetches only what is still missing. `guides\automating-it.md` has more examples.
 

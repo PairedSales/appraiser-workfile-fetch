@@ -1,10 +1,10 @@
 # Automating it
 
-Ask in plain words. The AI sets up the schedule and works out the rest.
+Ask in plain words. The AI sets up the schedule, works out the rest, and walks you through anything it needs from you.
 
-> Every night I want you to fetch the data for 123 Fake St, Anytown, IL.
+> Every night, fetch the data for my new orders from my email.
 
-> Every night, fetch any address in column A of `C:\Orders\orders.xlsx` that does not have a folder yet.
+> Every night, fetch any address in my orders spreadsheet that does not have a folder yet.
 
 > What is still missing?
 
