@@ -43,53 +43,12 @@ You still verify every record. See `DISCLAIMER.md`.
 
 ## Install
 
-You need Windows, Google Chrome, an MRED connectMLS membership, and one of the AI apps below. About 20 minutes.
+1. Extract the folder
+2. Create a new project in your AI desktop software (Claude, ChatGPT, Gemini), linking the extracted folder and your downloads folder.
+3. Enable chrome computer use in ChatGPT. enable Enable full CDP access at the bottom. "Always Allow" downloads
+4. Go to Chrome extension options for ChatGPT and 'Allow access to file URLs'
 
-1. **Download.** On this page, click **Code**, then **Download ZIP**. Extract it into your Documents folder. You get `Documents\appraiser-workfile-fetch-main`.
-2. **Set up your AI app.** Follow the page for your app. It covers the Chrome add-on, Python and the project:
-   * Claude desktop app: `setup\claude-desktop.md`
-   * ChatGPT desktop app or Codex: `setup\chatgpt.md`
-   * Gemini (experimental): `setup\gemini-experimental.md`
-3. **Turn on the Chrome setup.** In `setup\chrome\`, double-click `chrome-automation-on.reg` and approve the prompt. Read `setup\chrome\README.md` first: it changes how Chrome prints.
-4. **Sign in to connectMLS** in that same Chrome.
-5. **Run it.** In your AI project, type:
-
-   ```
-   run the fetch for 400 S Eagle St, Naperville, IL 60540
-   ```
-
-   The first time, the AI checks your PC (`fetch.py doctor`) and installs what is missing. Your AI app or its Chrome add-on asks before it opens each new site. Allow them (`setup\allowed-sites.md` lists every one).
-
-## Test addresses
-
-Public buildings, one per county, so you can try it without using a client's property. They are tax exempt and rarely listed, so expect some tax, township and MLS items to come back "not applicable". That is normal.
-
-| County | Address |
-|---|---|
-| Cook | Oak Park Village Hall, 123 Madison St, Oak Park, IL 60302 |
-| DuPage | Naperville Municipal Center, 400 S Eagle St, Naperville, IL 60540 |
-| Kane | Geneva City Hall, 22 S First St, Geneva, IL 60134 |
-| Lake | Libertyville Village Hall, 118 W Cook Ave, Libertyville, IL 60048 |
-| McHenry | Woodstock City Hall, 121 W Calhoun St, Woodstock, IL 60098 |
-| Will | Joliet City Hall, 150 W Jefferson St, Joliet, IL 60432 |
-| Kendall | Yorkville City Hall, 651 Prairie Pointe Dr, Yorkville, IL 60560 |
-| DeKalb | DeKalb Municipal Building, 164 E Lincoln Hwy, DeKalb, IL 60115 |
-
-## When something is missing
-
-Open `Workfiles\<address>\ErrorLog.txt`. Each missing item says why and what you need to do first, if anything. Do that (usually: sign in to the site in Chrome), then say "run the fetch for <address>" again. It only fetches what is still missing.
-
-## Updates
-
-Download the newer ZIP and extract it over the same folder, replacing files. Your own files are safe: they live only in `Workfiles\`, `_data\` and `local.json`, which the ZIP does not contain.
-
-## Want it to run on its own?
-
-`guides\automating-it.md` explains how to feed it a list of addresses, run it overnight, or add your own order documents. That part is up to you; this project only does one address at a time.
-
-## Contributing
-
-County sites change. If a step breaks, please open an issue or a pull request (`CONTRIBUTING.md`). Never post a real subject address, PIN or MLS number: use the test addresses above.
+That's it, just say enter an address and it will pull all of the relevant data.
 
 ## License
 
