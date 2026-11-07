@@ -20,11 +20,6 @@ The fetch uses a small Python helper. If you are not sure whether you have Pytho
 1. Open the Claude desktop app and create a new project (for example "Workfile fetch").
 2. Add the folder you extracted, `Documents\appraiser-workfile-fetch-main`.
 3. Add your **Downloads** folder too. Chrome saves MLS PDFs and printed pages there, and the fetch picks them up from it.
-4. In the project instructions, paste this one line:
-
-   ```
-   Before any data fetch, read START-HERE.md in the linked folder and follow it.
-   ```
 
 ## 4. Sign in
 
@@ -38,7 +33,7 @@ In the project, start a new chat and type:
 run the fetch for 400 S Eagle St, Naperville, IL 60540
 ```
 
-* The first time, Claude runs `fetch.py doctor`, which checks Python and the PDF tools. Let it install what is missing (`pip install`).
+* The first time, Claude checks Python and the PDF tools. Let it install what is missing.
 * Claude in Chrome asks before it opens each new site. Choose to always allow the sites in `allowed-sites.md`.
 * Claude may ask before it runs a command or writes a file. You can allow those for this project.
 
