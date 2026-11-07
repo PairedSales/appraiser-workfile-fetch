@@ -30,14 +30,14 @@ In the same Chrome, sign in to connectMLS. The fetch uses that session and never
 In the project, start a new chat and type:
 
 ```
-run the fetch for 400 S Eagle St, Naperville, IL 60540
+get the data for 123 Main St, Anytown, IL
 ```
 
 * The first time, Claude checks Python and the PDF tools. Let it install what is missing.
 * Claude in Chrome asks before it opens each new site. Choose to always allow the sites in `allowed-sites.md`.
 * Claude may ask before it runs a command or writes a file. You can allow those for this project.
 
-Files land in `Workfiles\400-S-Eagle-St-Naperville-IL-60540\` inside the folder.
+Files land in `Workfiles\<address>\` inside the folder.
 
 ## If it goes wrong
 
